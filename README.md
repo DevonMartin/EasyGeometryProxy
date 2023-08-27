@@ -11,27 +11,27 @@ EasyGeometryProxy
 </p>
 
 <p align=center>
-	<a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/">
-		<img src="https://img.shields.io/badge/Swift_Compatability-5.9-4f4f4f?logo=swift&colorB=F05138" alt="Swift Version">
-	</a>
-    
-	<a href="https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg#">
-		<img src="https://img.shields.io/badge/Platforms-iOS_|_macOS_|_visionOS-4f4f4f?logo=apple&colorB=ffffff" alt="Platforms">
-	</a>
-   
-  <br/>
-   
-	<a href="https://www.reddit.com/u/DeanHodes/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1">
-		<img src="https://img.shields.io/badge/Reddit-@DeanHodes-black?logo=reddit&colorA=ffffff&colorB=FF4500" alt="Reddit">
-	</a>
-   
-	<a href="https://www.threads.net/@realdevonmartin">
-		<img src="https://img.shields.io/badge/Threads-@realDevonMartin-4f4f4f?logo=threads&colorA=000000&&colorB=ffffff" alt="Threads">
-	</a>
-   
-	<a href="#License">
-		<img src="https://img.shields.io/badge/license-MIT-yellow)" alt="MIT License">
-	</a>
+<a href="https://docs.swift.org/swift-book/documentation/the-swift-programming-language/">
+	<img src="https://img.shields.io/badge/Swift_Compatability-5.9-4f4f4f?logo=swift&colorB=F05138" alt="Swift Version">
+</a>
+
+<a href="https://developer.apple.com/documentation/swiftui/view/onchange(of:initial:_:)-4psgg#">
+	<img src="https://img.shields.io/badge/Platforms-iOS_|_macOS_|_visionOS-4f4f4f?logo=apple&colorB=ffffff" alt="Platforms">
+</a>
+
+<br/>
+
+<a href="https://www.reddit.com/u/DeanHodes/?utm_source=share&utm_medium=ios_app&utm_name=ioscss&utm_content=1&utm_term=1">
+	<img src="https://img.shields.io/badge/Reddit-@DeanHodes-black?logo=reddit&colorA=ffffff&colorB=FF4500" alt="Reddit">
+</a>
+
+<a href="https://www.threads.net/@realdevonmartin">
+	<img src="https://img.shields.io/badge/Threads-@realDevonMartin-4f4f4f?logo=threads&colorA=000000&&colorB=ffffff" alt="Threads">
+</a>
+
+<a href="#license">
+	<img src="https://img.shields.io/badge/license-MIT-yellow)" alt="MIT License">
+</a>
 </p>
 
 ```swift
@@ -46,7 +46,6 @@ struct ContentView: View {
         }
         .withViewSize(onAppear: someFunction)
     }
-
 }
 ```
 
@@ -110,14 +109,14 @@ Working with your view's size has never been so clean.
 
 ```swift
 .background {
-	GeometryReader { proxy in
-		Color.clear
-			.onAppear {
-				someFunction(proxy)
-			}
-			.onChange(of: proxy.size, perform: someFunction)
-			.onChange(of: proxy.safeAreaInsets, perform: someFunction)
-	}
+    GeometryReader { proxy in
+        Color.clear
+            .onAppear {
+                someFunction(proxy)
+            }
+        .onChange(of: proxy.size, perform: someFunction)
+        .onChange(of: proxy.safeAreaInsets, perform: someFunction)
+    }
 }
 ```
 
@@ -125,9 +124,9 @@ Working with your view's size has never been so clean.
 
 ```swift
 .withViewGeometryProxy(
-	onAppear: someFunction,
-	onChangeSize: someFunction,
-	onChangeInsets: someFunction
+    onAppear: someFunction,
+    onChangeSize: someFunction,
+    onChangeInsets: someFunction
 )
 ```
 
@@ -137,13 +136,13 @@ Working with your view's size has never been so clean.
 
 ```swift
 .withViewGeometryProxy { proxy in
-	someFunction(proxy)
+    someFunction(proxy)
 } onChangeSize: {
-	/* 0 parameters */ 
-	someFunction()
+    /* 0 parameters */ 
+    someFunction()
 } onChangeInsets: { oldInsets, newInsets in
-	/* 2 parameters */
-	someFunction(oldInsets, newInsets)
+    /* 2 parameters */
+    someFunction(oldInsets, newInsets)
 }
 ```
 
@@ -151,9 +150,9 @@ Working with your view's size has never been so clean.
 
 ```swift
 .withViewGeometryProxy(
-	onAppear: someFunction,
-	onChangeSize: someFunction, // 0 parameters
-	onChangeInsets: someFunction // 2 parameters
+    onAppear: someFunction,
+    onChangeSize: someFunction,  // 0 parameters
+    onChangeInsets: someFunction // 2 parameters
 )
 ```
 
@@ -169,8 +168,7 @@ That's it! Then, in any file you want to access the package, simply `import Easy
 
 ## License
 
-The MIT License (MIT)
-=====================
+### The MIT License (MIT)
 
 Copyright © 2023 Devon Martin
 
